@@ -1,18 +1,13 @@
 import { ChatLayout } from './components/ChatLayout';
 import { ComposerShell } from './components/ComposerShell';
+import { MessageList } from './components/MessageList';
 import { env } from './config/env';
-import './App.css';
+import { FIXTURE_MESSAGES } from './data/fixtures';
 
 export function App() {
   return (
     <ChatLayout footer={<ComposerShell />}>
-      <div className="feed-placeholder">
-        <p className="feed-placeholder-title">Message feed</p>
-        <p className="feed-placeholder-text">
-          Layout shell ready. Outgoing author will be{' '}
-          <strong>{env.currentAuthor}</strong>.
-        </p>
-      </div>
+      <MessageList messages={FIXTURE_MESSAGES} currentAuthor={env.currentAuthor} />
     </ChatLayout>
   );
 }

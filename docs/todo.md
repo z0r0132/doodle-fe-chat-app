@@ -44,12 +44,12 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 5. Message UI
 
-- [ ] `MessageBubble` incoming vs outgoing (`VITE_CURRENT_AUTHOR`)
-- [ ] `MessageList`
-- [ ] Timestamp formatting; HTML entity decode for seed content
-- [ ] Component tests (a11y / rendering)
-- [ ] Incremental E2E: messages render; incoming vs outgoing
-- [ ] **Review gate:** review UI + tests; re-run unit + E2E smoke
+- [x] `MessageBubble` incoming vs outgoing (`VITE_CURRENT_AUTHOR`)
+- [x] `MessageList`
+- [x] Timestamp formatting; HTML entity decode for seed content
+- [x] Component tests (a11y / rendering)
+- [x] Incremental E2E: messages render; incoming vs outgoing
+- [x] **Review gate:** review UI + tests; re-run unit + E2E smoke
 
 ## 6. Load + poll
 
