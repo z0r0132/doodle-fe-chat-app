@@ -5,12 +5,12 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 ## Challenge requirements (track against these)
 
 - [x] React + TypeScript chat UI (Vite SPA)
-- [ ] Responsive on common browsers + mobile
-- [ ] Clear readable architecture
-- [ ] Frequent descriptive commits
-- [ ] Performance minded (fast load, efficient mobile rendering)
-- [ ] Accessibility prioritized
-- [ ] Design attention to mockups (not pixel-perfect)
+- [x] Responsive on common browsers + mobile
+- [x] Clear readable architecture
+- [x] Frequent descriptive commits
+- [x] Performance minded (fast load, efficient mobile rendering)
+- [x] Accessibility prioritized
+- [x] Design attention to mockups (not pixel-perfect)
 
 ## 1. Scaffold
 
@@ -67,23 +67,23 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 8. Polish + README
 
-- [ ] Responsive + a11y pass (focus, labels, `aria-live` as needed)
-- [ ] Reviewer README (run API + FE, env table, assumptions)
-- [ ] **Review gate:** final polish review
+- [x] Responsive + a11y pass (focus, labels, `aria-live` as needed)
+- [x] Reviewer README (run API + FE, env table, assumptions)
+- [x] **Review gate:** final polish review
 
 ## 9. Full E2E suite (largest, at the end)
 
-- [ ] Happy path, validation, keyboard send, mobile viewport, a11y smoke
-- [ ] **Review gate:** full suite green
+- [x] Happy path, validation, keyboard send, mobile viewport, a11y smoke
+- [x] **Review gate:** full suite green
 
 ## 10. OPTIONAL — Docker packaging
 
 - [ ] Multi-stage `Dockerfile` (+ optional compose) **or**
-- [ ] Consciously skip and note in README: build is Docker-ready via static `dist/`
+- [x] Consciously skip and note in README: build is Docker-ready via static `dist/`
 
 ## Definition of done
 
-- [ ] API running locally; FE loads messages and can send
-- [ ] Unit tests green; E2E suite green (or documented skips)
-- [ ] `docs/todo.md` checkboxes reflect reality
+- [x] API running locally; FE loads messages and can send
+- [x] Unit tests green; E2E suite green (or documented skips)
+- [x] `docs/todo.md` checkboxes reflect reality
 - [ ] Ready to email repo link with subject `FE-<yourname>`

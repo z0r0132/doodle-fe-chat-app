@@ -1,21 +1,52 @@
 # Chat App (Doodle Frontend Challenge)
 
-React + TypeScript chat UI for the [Doodle frontend challenge](../frontend-engineer/README.md). Talks to the local [Chat API](../frontend-challenge-chat-api).
+React + TypeScript chat UI for the Doodle frontend engineer challenge. Talks to the [Frontend Challenge Chat API](https://github.com/DoodleScheduling/frontend-challenge-chat-api).
 
-## Prerequisites
+## Quick start (reviewers)
 
-- Node.js 20+
-- Chat API running at `http://localhost:3000` (see API repo: `docker compose up`)
-
-## Setup
+**1. Start the Chat API** ([Frontend Challenge Chat API](https://github.com/DoodleScheduling/frontend-challenge-chat-api)):
 
 ```bash
-cp .env.example .env.local   # optional; defaults also in .env
+docker compose up -d
+# health: http://localhost:3000/health
+# swagger: http://localhost:3000/api/v1/docs
+```
+
+**2. Start this app:**
+
+```bash
+cp .env.example .env.local   # optional
 npm install
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+Open http://localhost:5173. You should see seeded messages, then be able to send as `VITE_CURRENT_AUTHOR` (default `You` — yellow / right-aligned).
+
+**3. Checks:**
+
+```bash
+npm run typecheck
+npm test
+npm run test:e2e   # requires API on :3000
+```
+
+## Assumptions
+
+- Outgoing bubbles = messages whose `author` equals `VITE_CURRENT_AUTHOR`.
+- “Realtime” = polling `GET /api/v1/messages?after=<newestCreatedAt>` (API has no WebSocket).
+- List order follows the API (oldest first).
+- Message body is plain text; HTML entities from the API are decoded for display only (no HTML rendering).
+
+## Environment
+
+See `.env.example`. Use `.env.local` for local overrides (gitignored).
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_BASE_URL` | API origin (`http://localhost:3000` locally) |
+| `VITE_API_TOKEN` | Bearer token |
+| `VITE_CURRENT_AUTHOR` | Your display author (outgoing bubbles) |
+| `VITE_POLL_INTERVAL_MS` | Poll interval for new messages |
 
 ## Scripts
 
@@ -27,19 +58,8 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 | `npm run typecheck` | TypeScript project references check |
 | `npm run lint` | Oxlint |
 | `npm test` | Vitest unit/component tests |
-| `npm run test:e2e` | Playwright E2E (starts Vite if needed) |
+| `npm run test:e2e` | Playwright E2E (starts Vite if needed; API required for load/send) |
 | `npm run format` | Prettier |
-
-## Environment
-
-See `.env.example`. Use `.env.local` for local overrides (gitignored).
-
-| Variable | Description |
-|----------|-------------|
-| `VITE_API_BASE_URL` | API origin |
-| `VITE_API_TOKEN` | Bearer token |
-| `VITE_CURRENT_AUTHOR` | Your display author (outgoing bubbles) |
-| `VITE_POLL_INTERVAL_MS` | Poll interval for new messages |
 
 ## Decisions & tradeoffs
 
@@ -62,7 +82,7 @@ Messages are rendered as **plain text** (`white-space: pre-wrap`). We only **dec
 That is a deliberate security tradeoff:
 
 - Allowing raw HTML from authors opens **XSS** (scripts in messages).
-- “Encryption” is not the right tool here; the usual approaches are:
+- Encryption is not the right tool here; the usual approaches are:
   - **Keep plain text** (current) — safest and enough for this challenge.
   - **Constrained Markdown** (e.g. bold/italic/links only) → parse to HTML → **sanitize** with a library like DOMPurify before render.
   - **Structured rich text** (Slate/ProseMirror) — overkill unless editing UX is a product goal.
@@ -77,8 +97,8 @@ The provided API exposes REST only. “Realtime” is implemented with **polling
 
 - Infinite scroll upward via `?before=` for history
 - Pause polling when the tab is hidden (`document.visibilityState`)
-- Docker multi-stage image for the static `dist/` (build is already Docker-ready)
-- Stronger a11y pass (`aria-live` for new messages, reduced-motion)
+- Docker multi-stage image for the static `dist/` (intentionally deferred; build is already Docker-ready via static `dist/` + `.dockerignore`)
+- Further a11y tooling (axe CI) beyond current labels, live region, and focus styles
 
 ## Docs
 
@@ -87,4 +107,8 @@ The provided API exposes REST only. “Realtime” is implemented with **polling
 
 ## Docker
 
-The app builds to a static `dist/` (nginx-friendly). A full `Dockerfile` is optional later; `.dockerignore` is already in place.
+The app builds to a static `dist/` (nginx-friendly). A full `Dockerfile` is deferred for timebox reasons; `.dockerignore` and the static build keep packaging straightforward later.
+
+## Submission
+
+Email the repo link to `code-challenge@doodle.com` with subject `FE-<yourname>`.

@@ -4,6 +4,7 @@
   align-items: center;
   gap: var(--space-composer);
   padding: var(--space-composer);
+  padding-bottom: max(var(--space-composer), env(safe-area-inset-bottom));
   background: var(--color-composer-bar);
 }
 

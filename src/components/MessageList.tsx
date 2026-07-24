@@ -8,11 +8,18 @@ type MessageListProps = {
   currentAuthor: string;
 };
 
+function prefersReducedMotion(): boolean {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 export function MessageList({ messages, currentAuthor }: MessageListProps) {
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ block: 'end' });
+    endRef.current?.scrollIntoView({
+      block: 'end',
+      behavior: prefersReducedMotion() ? 'instant' : 'smooth',
+    });
   }, [messages.length]);
 
   if (messages.length === 0) {
@@ -20,7 +27,13 @@ export function MessageList({ messages, currentAuthor }: MessageListProps) {
   }
 
   return (
-    <div className="message-list" role="list" aria-label="Messages">
+    <div
+      className="message-list"
+      role="list"
+      aria-label="Messages"
+      aria-live="polite"
+      aria-relevant="additions"
+    >
       {messages.map((message) => (
         <div key={message._id} className="message-list-item" role="listitem">
           <MessageBubble

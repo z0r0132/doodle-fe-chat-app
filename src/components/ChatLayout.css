@@ -13,6 +13,8 @@
   overscroll-behavior: contain;
   /* 16px gap above footer per mobile notes; side margin 24px */
   padding: var(--space-bubble-gap) var(--space-side);
+  padding-left: max(var(--space-side), env(safe-area-inset-left));
+  padding-right: max(var(--space-side), env(safe-area-inset-right));
   background-color: var(--color-bg);
   /* Full-resolution lossless WebP of the challenge asset (~103KB vs 514KB PNG) */
   background-image: url('/body-bg.webp');

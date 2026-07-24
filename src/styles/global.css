@@ -81,3 +81,15 @@ input:focus-visible {
   white-space: nowrap;
   border: 0;
 }
+
+@media (max-width: 480px) {
+  .message-bubble {
+    max-width: min(640px, 90%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
