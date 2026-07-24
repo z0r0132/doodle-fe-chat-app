@@ -60,10 +60,10 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 7. Composer / send
 
-- [ ] Composer validation + pending state + Enter to send
-- [ ] Unit/integration tests for hook + composer
-- [ ] Incremental E2E: send appears as outgoing
-- [ ] **Review gate:** review send path; re-run unit + E2E
+- [x] Composer validation + pending state + Enter to send
+- [x] Unit/integration tests for hook + composer
+- [x] Incremental E2E: send appears as outgoing
+- [x] **Review gate:** review send path; re-run unit + E2E
 
 ## 8. Polish + README
 

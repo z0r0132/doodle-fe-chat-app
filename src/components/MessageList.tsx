@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import type { Message } from '../types/message';
 import { MessageBubble } from './MessageBubble';
 import './MessageList.css';
@@ -8,6 +9,12 @@ type MessageListProps = {
 };
 
 export function MessageList({ messages, currentAuthor }: MessageListProps) {
+  const endRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: 'end' });
+  }, [messages.length]);
+
   if (messages.length === 0) {
     return <p className="message-list-empty">No messages yet.</p>;
   }
@@ -22,6 +29,7 @@ export function MessageList({ messages, currentAuthor }: MessageListProps) {
           />
         </div>
       ))}
+      <div ref={endRef} aria-hidden="true" />
     </div>
   );
 }

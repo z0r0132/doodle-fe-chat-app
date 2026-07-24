@@ -1,5 +1,6 @@
 .composer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-composer);
   padding: var(--space-composer);
@@ -22,7 +23,7 @@
 }
 
 .composer-input:disabled {
-  opacity: 1;
+  opacity: 0.85;
   cursor: not-allowed;
 }
 
@@ -36,9 +37,20 @@
   background: var(--color-send);
   color: var(--color-send-text);
   font-weight: 600;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .composer-send:disabled {
-  opacity: 0.85;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.composer-error {
+  flex: 1 0 100%;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: var(--control-radius);
+  background: #fff;
+  color: #b42318;
+  font-size: 0.875rem;
 }

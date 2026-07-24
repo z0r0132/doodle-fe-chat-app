@@ -1,15 +1,24 @@
 import { ChatLayout } from './components/ChatLayout';
-import { ComposerShell } from './components/ComposerShell';
+import { Composer } from './components/Composer';
 import { MessageList } from './components/MessageList';
 import { env } from './config/env';
 import { useMessages } from './hooks/useMessages';
 import './AppLoad.css';
 
 export function App() {
-  const { messages, status, error } = useMessages();
+  const { messages, status, error, isSending, sendError, sendMessage } = useMessages();
 
   return (
-    <ChatLayout footer={<ComposerShell />}>
+    <ChatLayout
+      footer={
+        <Composer
+          disabled={status !== 'ready'}
+          isSending={isSending}
+          sendError={sendError}
+          onSend={sendMessage}
+        />
+      }
+    >
       {status === 'loading' ? (
         <p className="feed-status" role="status">
           Loading messages…
