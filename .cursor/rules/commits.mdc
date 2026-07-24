@@ -1,0 +1,21 @@
+---
+description: Small descriptive commits aligned with docs/todo.md
+alwaysApply: true
+---
+
+# Commits
+
+- One logical slice per commit, matching sections in `docs/todo.md`.
+- Prefer prefixes: `chore:`, `feat:`, `fix:`, `test:`, `docs:`.
+- Message focuses on why / what capability landed, not file lists.
+- Do not commit `.env.local`, secrets, or `node_modules`.
+- Only create commits when the user asks.
+
+## When the user asks to commit
+
+1. Run `git add .` in `chat-app/`.
+2. Propose a commit message and **wait for confirmation** (user may confirm or change it).
+3. Only after confirmation: create the commit.
+4. Then push to the **current branch** (whatever is checked out; user may switch branches).
+5. Open a PR only when the user explicitly asks — not by default.
+---

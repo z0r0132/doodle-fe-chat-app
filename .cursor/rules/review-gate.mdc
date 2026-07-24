@@ -1,0 +1,17 @@
+---
+description: After each todo slice — review, fix, re-test before marking done
+alwaysApply: true
+---
+
+# Review gate
+
+After finishing an implementation or test slice:
+
+1. Review the diff against challenge requirements and architecture rules.
+2. List concrete findings (bugs, a11y gaps, perf smells, design drift).
+3. Fix clear issues found in that slice.
+4. Re-run relevant checks (`npm run typecheck`, `npm test`, and/or E2E smokes).
+5. Only then mark the corresponding `docs/todo.md` checkboxes and move on.
+
+Do not skip the gate to “save time” — regressions caught early are the point.
+---

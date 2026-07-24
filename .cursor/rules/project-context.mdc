@@ -1,0 +1,35 @@
+---
+description: Doodle FE challenge goals, constraints, and evaluation criteria
+alwaysApply: true
+---
+
+# Project context
+
+Build a React + TypeScript chat UI that sends and displays messages from all authors, resembling the mockups in `../frontend-engineer/assets/`. Wire to `../frontend-challenge-chat-api` (do not modify that repo).
+
+## Challenge requirements
+
+- Timebox mindset: prefer a solid core path over extras (brief: ~4–6 hours).
+- Technology: React + TypeScript (Vite SPA). Do not introduce Next.js.
+- Responsiveness: common browsers + mobile.
+- Code quality: readable code, frequent useful commits, performance and accessibility prioritized.
+
+## What reviewers look for
+
+- Code readability and clean architecture
+- Commit quality (frequent, descriptive)
+- Fast load / efficient mobile rendering
+- Accessibility
+- Design attention (not pixel-perfect; detail matters)
+
+## API facts
+
+- Base URL and token from env (`VITE_API_BASE_URL`, `VITE_API_TOKEN`).
+- Bearer auth on message endpoints.
+- `GET /api/v1/messages` and `POST /api/v1/messages` only — no WebSocket; poll with `?after=`.
+- Default list order from API is oldest-first; trust the live API over brief wording.
+
+## Out of scope unless explicitly requested
+
+- Editing the API repo, auth UI, edit/delete messages, inventing realtime transports.
+---

@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+.git
+.cursor
+*.md
+!README.md
+.env.local
+.env.*.local
+coverage
+playwright-report
+test-results
+e2e/.auth
+.DS_Store
+*.log

@@ -1,0 +1,42 @@
+# Architecture
+
+## App shape
+
+Vite + React + TypeScript SPA. Static build output in `dist/` (nginx-friendly later).
+
+```
+src/
+  api/         HTTP client + message endpoints
+  components/  Presentational UI
+  config/      env.ts (only place reading import.meta.env)
+  hooks/       useMessages and related data hooks
+  styles/      Global CSS / tokens
+  types/       Shared types
+e2e/           Playwright specs (incremental, then full suite)
+```
+
+## Env
+
+| Variable | Purpose |
+|----------|---------|
+| `VITE_API_BASE_URL` | Chat API origin (local: `http://localhost:3000`) |
+| `VITE_API_TOKEN` | Bearer token |
+| `VITE_CURRENT_AUTHOR` | Author string for outgoing (“you”) messages |
+| `VITE_POLL_INTERVAL_MS` | Poll interval for `?after=` fetches |
+
+- Committed: `.env.example`, production-oriented `.env`
+- Local overrides: `.env.local` (gitignored via `*.local`)
+
+## Current user
+
+Outgoing (yellow, right-aligned, no author label) when `message.author === VITE_CURRENT_AUTHOR`.
+
+## Realtime
+
+No WebSocket in the API. Poll `GET /api/v1/messages?after=<newestCreatedAt>`.
+
+## Docker-ready (early)
+
+- Pure static `npm run build` → `dist/`
+- `.dockerignore` excludes `node_modules`, `dist`, `.env.local`, Playwright artifacts
+- Optional later: multi-stage `node` build → `nginx` serve; build-args for `VITE_*`

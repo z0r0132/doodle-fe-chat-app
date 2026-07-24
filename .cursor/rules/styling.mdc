@@ -1,0 +1,21 @@
+---
+description: Design tokens and styling conventions from challenge mockups
+globs: "**/*.{css,tsx}"
+alwaysApply: false
+---
+
+# Styling
+
+Use CSS variables for palette and spacing. Match mockups in `../frontend-engineer/assets/` without chasing pixel perfection.
+
+## Tokens (targets)
+
+- Side margin: 24px; bubble gap: 16px; bubble padding: 16px; composer padding: 8px
+- Bubble max-width ~640px (percentage-based on mobile)
+- Incoming: white bubble, show author + body + timestamp (left)
+- Outgoing: pale yellow (~`#FCF6C5`), body + timestamp only (right)
+- Footer bar: ~`#3798D4`; Send: ~`#FF876D`
+- Background: tile `Body BG.png` from `public/`
+
+Avoid card-heavy redesigns, purple/indigo AI defaults, and unnecessary shadow stacks.
+---

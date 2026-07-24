@@ -1,0 +1,33 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-side);
+}
+
+.chat-placeholder {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.composer-bar {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: var(--space-composer);
+  background: var(--color-composer-bar);
+  color: #fff;
+}
+
+.composer-placeholder {
+  opacity: 0.9;
+  font-size: 0.875rem;
+}

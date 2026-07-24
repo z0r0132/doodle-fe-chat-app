@@ -1,0 +1,14 @@
+---
+description: Unit and E2E testing conventions
+globs: "**/*.{test,spec}.{ts,tsx},e2e/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Testing
+
+- Unit/component: Vitest + Testing Library; mock `fetch`; assert behavior, not internals.
+- E2E: Playwright under `e2e/`. Grow incremental smokes after each feature; keep the largest suite for the end.
+- E2E that hit the real API require the Chat API running locally.
+- Prefer accessible queries (`getByRole`, `getByLabelText`) over CSS selectors.
+- After fixing review findings, re-run the relevant unit and E2E smokes before marking the slice done.
+---

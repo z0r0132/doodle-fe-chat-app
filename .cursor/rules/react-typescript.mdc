@@ -1,0 +1,15 @@
+---
+description: React and TypeScript conventions
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# React + TypeScript
+
+- Functional components only; prefer named exports.
+- Strict typing — no `any`. Prefer `unknown` + narrowing for errors.
+- Extract data/side effects into hooks; keep JSX declarative.
+- Forms: associated labels, keyboard Enter-to-send on composer, visible focus states.
+- Prefer early returns over deep nesting.
+- Decode untrusted display text safely (e.g. HTML entities from seed data) without `dangerouslySetInnerHTML` unless justified.
+---

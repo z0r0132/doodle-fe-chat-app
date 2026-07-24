@@ -1,0 +1,27 @@
+---
+description: Layer boundaries and Docker-ready SPA assumptions
+alwaysApply: true
+---
+
+# Architecture
+
+## Layers
+
+| Path | Responsibility |
+|------|----------------|
+| `src/api/` | HTTP client, Bearer header, `getMessages` / `createMessage`, typed errors |
+| `src/types/` | Shared domain types matching the API |
+| `src/hooks/` | Data orchestration (`useMessages`); no raw `fetch` in components |
+| `src/components/` | Presentational UI only |
+| `src/config/env.ts` | Sole place that reads `import.meta.env` |
+| `src/styles/` | Global tokens and layout |
+| `e2e/` | Playwright specs |
+
+## Rules
+
+- No business/API logic inside presentational components.
+- Current user is `VITE_CURRENT_AUTHOR`; outgoing UI when `author === currentAuthor`.
+- App must remain a static Vite build (`dist/`) so it can be served by nginx later.
+- Prefer CSS (variables / modules) over heavy UI libraries.
+- No Redux or global state libraries — React state + hooks.
+---
