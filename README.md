@@ -40,6 +40,14 @@ See `.env.example`. Use `.env.local` for local overrides (gitignored).
 | `VITE_CURRENT_AUTHOR` | Your display author (outgoing bubbles) |
 | `VITE_POLL_INTERVAL_MS` | Poll interval for new messages |
 
+## Decisions
+
+### Why not TanStack Query (React Query)?
+
+TanStack Query is a common choice for API/server state in React apps. This chat UI is a **single page** with one list: initial load, poll with `?after=`, and send via POST. A small `useMessages` hook covers that without an extra dependency, and keeps the submission easier to review in a short challenge.
+
+If the app grew (more screens, shared caches, complex invalidation/retries across features), TanStack Query would be a strong fit for server state.
+
 ## Docs
 
 - [`docs/todo.md`](docs/todo.md) — implementation checklist

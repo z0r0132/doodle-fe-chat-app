@@ -31,10 +31,10 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 3. API client
 
-- [ ] Typed `getMessages` / `createMessage` with Bearer auth
-- [ ] Error mapping (401 / 400 / 5xx)
-- [ ] Vitest unit tests (success, validation, unauthorized)
-- [ ] **Review gate:** review client + tests; re-run `npm test`
+- [x] Typed `getMessages` / `createMessage` with Bearer auth
+- [x] Error mapping (401 / 400 / 5xx)
+- [x] Vitest unit tests (success, validation, unauthorized)
+- [x] **Review gate:** review client + tests; re-run `npm test`
 
 ## 4. E2E harness (early)
 
