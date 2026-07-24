@@ -40,8 +40,8 @@ No WebSocket in the API. Poll `GET /api/v1/messages?after=<newestCreatedAt>`.
 - Tiled background: `public/body-bg.webp` — full 1536×1180 **lossless** WebP of challenge `Body BG.png` (~103KB vs ~514KB PNG, same pixels)
 - Layout: `ChatLayout` (scrollable feed + sticky footer) + `ComposerShell` (visual only until send is wired)
 
-## Docker-ready (early)
+## Docker-ready
 
-- Pure static `npm run build` → `dist/`
+- Multi-stage `Dockerfile`: `node` build → `nginx` serve `dist/`
+- Build-time `VITE_*` args (see README)
 - `.dockerignore` excludes `node_modules`, `dist`, `.env.local`, Playwright artifacts
-- Optional later: multi-stage `node` build → `nginx` serve; build-args for `VITE_*`

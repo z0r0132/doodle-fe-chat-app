@@ -97,7 +97,6 @@ The provided API exposes REST only. “Realtime” is implemented with **polling
 
 - Infinite scroll upward via `?before=` for history
 - Pause polling when the tab is hidden (`document.visibilityState`)
-- Docker multi-stage image for the static `dist/` (intentionally deferred; build is already Docker-ready via static `dist/` + `.dockerignore`)
 - Further a11y tooling (axe CI) beyond current labels, live region, and focus styles
 
 ## Docs
@@ -107,7 +106,24 @@ The provided API exposes REST only. “Realtime” is implemented with **polling
 
 ## Docker
 
-The app builds to a static `dist/` (nginx-friendly). A full `Dockerfile` is deferred for timebox reasons; `.dockerignore` and the static build keep packaging straightforward later.
+Multi-stage image: Node builds `dist/`, nginx serves it on port 80.
+
+```bash
+docker build -t doodle-chat-app .
+docker run --rm -p 8080:80 doodle-chat-app
+```
+
+Open http://localhost:8080. Override API URL/token at build time if needed:
+
+```bash
+docker build \
+  --build-arg VITE_API_BASE_URL=http://localhost:3000 \
+  --build-arg VITE_API_TOKEN=super-secret-doodle-token \
+  --build-arg VITE_CURRENT_AUTHOR=You \
+  -t doodle-chat-app .
+```
+
+Note: the browser calls the API from the user’s machine, so `VITE_API_BASE_URL` must be reachable from the browser (e.g. `http://localhost:3000` when the Chat API runs locally).
 
 ## Submission
 

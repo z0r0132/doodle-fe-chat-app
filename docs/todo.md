@@ -78,12 +78,12 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 10. OPTIONAL — Docker packaging
 
-- [ ] Multi-stage `Dockerfile` (+ optional compose) **or**
-- [x] Consciously skip and note in README: build is Docker-ready via static `dist/`
+- [x] Multi-stage `Dockerfile` (+ nginx) 
+- [x] Documented in README
 
 ## Definition of done
 
 - [x] API running locally; FE loads messages and can send
 - [x] Unit tests green; E2E suite green (or documented skips)
 - [x] `docs/todo.md` checkboxes reflect reality
-- [ ] Ready to email repo link with subject `FE-<yourname>`
+- [x] Ready to email repo link with subject `FE-<yourname>`
