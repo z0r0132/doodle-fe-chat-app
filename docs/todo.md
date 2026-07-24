@@ -38,9 +38,9 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 4. E2E harness (early)
 
-- [ ] Playwright installed and configured
-- [ ] Smoke E2E: app boots, shell visible
-- [ ] **Review gate:** review Playwright setup; re-run smoke E2E
+- [x] Playwright installed and configured
+- [x] Smoke E2E: app boots, shell visible
+- [x] **Review gate:** review Playwright setup; re-run smoke E2E
 
 ## 5. Message UI
 

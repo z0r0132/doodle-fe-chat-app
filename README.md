@@ -27,6 +27,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 | `npm run typecheck` | TypeScript project references check |
 | `npm run lint` | Oxlint |
 | `npm test` | Vitest unit/component tests |
+| `npm run test:e2e` | Playwright E2E (starts Vite if needed) |
 | `npm run format` | Prettier |
 
 ## Environment

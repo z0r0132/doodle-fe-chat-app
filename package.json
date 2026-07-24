@@ -12,13 +12,15 @@
     "test:watch": "vitest",
     "format": "prettier --write .",
     "typecheck": "tsc -b --noEmit",
-    "test:e2e": "echo 'Playwright E2E not set up yet' && exit 1"
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
