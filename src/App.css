@@ -1,33 +1,23 @@
-.app-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
+.feed-placeholder {
+  max-width: var(--bubble-max-width);
+  margin: 0 auto;
+  padding: var(--space-bubble-pad);
+  border: 1px solid var(--color-incoming-border);
+  border-radius: var(--bubble-radius);
+  background: var(--color-incoming);
+  box-shadow: var(--shadow-bubble);
 }
 
-.chat-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-side);
+.feed-placeholder-title {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  color: var(--color-meta);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
-.chat-placeholder {
+.feed-placeholder-text {
   margin: 0;
   color: var(--color-text);
-  font-size: 1rem;
-}
-
-.composer-bar {
-  display: flex;
-  align-items: center;
-  min-height: 56px;
-  padding: var(--space-composer);
-  background: var(--color-composer-bar);
-  color: #fff;
-}
-
-.composer-placeholder {
-  opacity: 0.9;
-  font-size: 0.875rem;
 }

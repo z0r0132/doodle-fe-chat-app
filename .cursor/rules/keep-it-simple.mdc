@@ -1,0 +1,14 @@
+---
+description: Prefer simple, clear solutions — avoid over-engineering
+alwaysApply: true
+---
+
+# Keep it simple
+
+- Prefer the simplest option that works for this small challenge app.
+- No extreme abstraction, indirection, or “enterprise” patterns unless clearly needed.
+- Names should be short, descriptive, and obvious (e.g. `chat-feed`, not `chat-layout__feed`).
+- Flat CSS class names — do not use BEM `__` / `--` unless the user asks.
+- Avoid premature generalization (extra wrappers, factories, context for one consumer).
+- When two approaches work, choose the clearer one for a reviewer reading the PR in order.
+---

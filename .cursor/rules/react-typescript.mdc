@@ -8,8 +8,9 @@ alwaysApply: false
 
 - Functional components only; prefer named exports.
 - Strict typing — no `any`. Prefer `unknown` + narrowing for errors.
-- Extract data/side effects into hooks; keep JSX declarative.
+- Extract data/side effects into hooks only when it clarifies the component; don’t invent hook layers early.
 - Forms: associated labels, keyboard Enter-to-send on composer, visible focus states.
 - Prefer early returns over deep nesting.
 - Decode untrusted display text safely (e.g. HTML entities from seed data) without `dangerouslySetInnerHTML` unless justified.
+- Prefer straightforward, readable code over clever abstractions.
 ---

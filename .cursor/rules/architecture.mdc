@@ -19,9 +19,10 @@ alwaysApply: true
 
 ## Rules
 
+- Keep architecture shallow: a few clear folders, not deep trees.
 - No business/API logic inside presentational components.
 - Current user is `VITE_CURRENT_AUTHOR`; outgoing UI when `author === currentAuthor`.
 - App must remain a static Vite build (`dist/`) so it can be served by nginx later.
-- Prefer CSS (variables / modules) over heavy UI libraries.
+- Prefer plain CSS + variables over heavy UI libraries or CSS-in-JS.
 - No Redux or global state libraries — React state + hooks.
 ---

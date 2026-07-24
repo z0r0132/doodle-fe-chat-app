@@ -8,6 +8,12 @@ alwaysApply: false
 
 Use CSS variables for palette and spacing. Match mockups in `../frontend-engineer/assets/` without chasing pixel perfection.
 
+## Class names
+
+- Flat, readable names: `chat-feed`, `composer-input`, `message-bubble`.
+- Do not use BEM (`Block__Element`) unless asked.
+- Colocate a simple `.css` file next to the component.
+
 ## Tokens (targets)
 
 - Side margin: 24px; bubble gap: 16px; bubble padding: 16px; composer padding: 8px

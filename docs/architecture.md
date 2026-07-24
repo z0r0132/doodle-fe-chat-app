@@ -35,6 +35,11 @@ Outgoing (yellow, right-aligned, no author label) when `message.author === VITE_
 
 No WebSocket in the API. Poll `GET /api/v1/messages?after=<newestCreatedAt>`.
 
+## Design shell
+
+- Tiled background: `public/body-bg.webp` — full 1536×1180 **lossless** WebP of challenge `Body BG.png` (~103KB vs ~514KB PNG, same pixels)
+- Layout: `ChatLayout` (scrollable feed + sticky footer) + `ComposerShell` (visual only until send is wired)
+
 ## Docker-ready (early)
 
 - Pure static `npm run build` → `dist/`

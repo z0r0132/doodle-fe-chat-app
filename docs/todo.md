@@ -24,10 +24,10 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 2. Design shell
 
-- [ ] Copy `Body BG.png` to `public/`
-- [ ] CSS variables (colors, spacing from annotated assets)
-- [ ] Full-height chat layout + sticky composer placeholder
-- [ ] **Review gate:** review layout/CSS; visual smoke in browser
+- [x] Copy `Body BG.png` to `public/`
+- [x] CSS variables (colors, spacing from annotated assets)
+- [x] Full-height chat layout + sticky composer placeholder
+- [x] **Review gate:** review layout/CSS; visual smoke in browser
 
 ## 3. API client
 

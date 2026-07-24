@@ -1,0 +1,44 @@
+.composer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-composer);
+  padding: var(--space-composer);
+  background: var(--color-composer-bar);
+}
+
+.composer-input {
+  flex: 1;
+  min-width: 0;
+  height: var(--composer-control-height);
+  padding: 0 12px;
+  border: none;
+  border-radius: var(--control-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.composer-input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.composer-input:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.composer-send {
+  flex-shrink: 0;
+  height: var(--composer-control-height);
+  min-width: 72px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--control-radius);
+  background: var(--color-send);
+  color: var(--color-send-text);
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.composer-send:disabled {
+  opacity: 0.85;
+}

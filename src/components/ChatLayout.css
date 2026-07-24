@@ -1,0 +1,25 @@
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+.chat-feed {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* 16px gap above footer per mobile notes; side margin 24px */
+  padding: var(--space-bubble-gap) var(--space-side);
+  background-color: var(--color-bg);
+  /* Full-resolution lossless WebP of the challenge asset (~103KB vs 514KB PNG) */
+  background-image: url('/body-bg.webp');
+  background-repeat: repeat;
+  background-size: 384px auto;
+}
+
+.chat-footer {
+  flex-shrink: 0;
+}
