@@ -53,10 +53,10 @@ Living checklist for the Doodle frontend challenge. Check items as slices land. 
 
 ## 6. Load + poll
 
-- [ ] `useMessages`: initial load, poll `after=`, merge by `_id`
-- [ ] Loading / error UI
-- [ ] Incremental E2E: loads live messages (API up)
-- [ ] **Review gate:** review hook; re-run unit + E2E
+- [x] `useMessages`: initial load, poll `after=`, merge by `_id`
+- [x] Loading / error UI
+- [x] Incremental E2E: loads live messages (API up)
+- [x] **Review gate:** review hook; re-run unit + E2E
 
 ## 7. Composer / send
 

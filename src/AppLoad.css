@@ -1,0 +1,15 @@
+.feed-status {
+  margin: 0;
+  text-align: center;
+  color: var(--color-meta);
+}
+
+.feed-status-error {
+  color: #b42318;
+  background: #fff;
+  border: 1px solid #f3d1d1;
+  border-radius: var(--bubble-radius);
+  padding: var(--space-bubble-pad);
+  max-width: var(--bubble-max-width);
+  margin-inline: auto;
+}
